@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보</title>
+<style>
+	#loginFormArea{
+		text-align : left;
+		width : 400px;
+		margin : auto;
+		border : 2px solid gold;
+	}
+	h2{
+		text-align : center;
+	}
+</style>
+</head>
+<body>
+	<h2>로그인</h>
+	<section id  = "loginFormArea">
+	
+		<form action="HI" method="post">
+		<label id = "name">성 명 :</label>
+			<input type ="text" name="name" id="name"><br>
+		<label id = "id">아  이  디 :</label>
+			<input type= "text" name= "id" id="id"> <br>
+		<label id = "password">비밀번호 :</label>
+			<input type = "password" name="pwd" id="pw"><br>
+		<label id = "hobby">취미</label><br>
+			<input type="checkbox" name="hobby" value="노래부르기">노래부르기
+			<input type="checkbox" name="hobby" value="요리하기">요리하기
+			<input type="checkbox" name="hobby" value="게임하기">게임하기
+						
+		<label id = "car">차량유무</label><br>
+			<input type="radio" name="car" value="소유" checked="checked">소유
+			<input type="radio" name="car" value="무소유">무소유<br>			
+		<input type="submit" value="회원가입">
+		<input type="reset" value="초기화">
+		</form>
+	</section>
+	
+</body>
+</html>

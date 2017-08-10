@@ -1,2 +1,52 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+﻿1. 환경구축하기
+
+#이클립스에 톰캣연동하기
+  Windows > show view > Server탭 열기
+  No server are available.Click this link to create a new server (클릭)
+  설치된 아파치톰캣버전과  경로를 지정해주면 연동완료
+  
+#서버설정
+  연동된 서버 더블클릭하여 속성 변경
+  ServerLocations에서 UseTomcat installation으로 맞춰준다
+  ServerOptions에서 
+	Publishing module context to sparate XML files체크
+	Modules auto reload by default 체크
+  Ports
+	HTTP/1.1 포트를 8080에서 다른것으로 수정(오라클DB에서 8080활용하므로, 충돌방지)
+
+#서버구동 확인
+  이클립스에서 서버 구동(start server버튼)
+  http://localhost:8181/접속
+
+
+2. JSP 문서작성
+
+#Dynamic Web Project 생성
+ 프로젝트명(소문자 시작), 톰켓, 모듈버젼(3.1)선택
+ Generate web xml deployment descriptor선택 후 생성
+ 생성된 프로젝트 내 WebContent경로에 JSP File 작성
+ Run as로 톰캣서버에서 작성한 JSP File 실행
+
+3. Servlet 문서작성
+
+#Dynamic Web Project 생성
+ 프로젝트명(소문자 시작), 톰켓, 모듈버젼(3.1)선택
+ Generate web xml deployment descriptor선택 후 생성
+ 생성된 프로젝트 내 WebContent경로에 Servlet 작성
+  Java package : 생성할 패키지명
+  Class Name : 대문자로 시작하는 클래스명
+  Superclass(상속받을 부모클래스) : javax.servlet.http.HttpServlet
+ Run as로 톰캣서버에서 작성한 JSP File 실행
+
+
+4. Get/Post방식
+
+#html내 form태그의 method속성에 명시된 get/post 형식에 따라 호출됨
+#웹브라우저의 주소창을 이용하여 servlet요청한 경우에도 호출됨
+
+5.Server > Tomcat > server.xml
+#Context구문 : 이제껏 생성된 WAS구분하기 위한 PATH명시하고있다
+#Connector구문 : URIEncoding="EUC-KR"을 삽입하여 Get방식에서 한글설정
+ 	=>Sever탭 우측에 Publish to Server 버큰 클릭하여 Syncronize한다
+	cf)Post방식에서의 한글설정은 메소드내 다음 삽입 request.setCharacterEncoding("EUC-KR");
+

@@ -1,0 +1,87 @@
+package com.javalec.ex1;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/*ServletContext활용하여 모든 클래스에서 불러올 수 있는 데이터 활용 
+ * 
+ */
+
+/**
+ * Servlet implementation class ContextInitParam
+ */
+@WebServlet("/ServletContext")
+public class ContextInitParam extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ContextInitParam() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+    @PostConstruct
+    public void post_construct() {
+    	System.out.println("PostConstruct 선처리");
+    }
+	public void init(ServletConfig config) throws ServletException {
+
+		System.out.println("init()호출시도");
+		super.init(config);
+		System.out.println("init()호출완료");
+		// TODO Auto-generated method stub
+	}
+	/**
+	 * @see Servlet#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+	@PreDestroy
+	public void pre_destroy() {
+		System.out.println("PreDestroy 후처리");
+	}
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		String id = getServletContext().getInitParameter("id");
+		String pw = getServletContext().getInitParameter("pw");
+		String path = getServletContext().getInitParameter("path");
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter writer = response.getWriter();
+		
+		writer.println("<html><head>ServletContext</head><body>");
+		writer.println("아이디 : "+id+"<br>");
+		writer.println("비밀번호 : "+pw+"<br>");
+		writer.println("경로"+ path+"</body></html>");
+		writer.close();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
