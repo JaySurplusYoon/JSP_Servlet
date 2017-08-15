@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" port="8181" protocol="HTTP/1.1" redirectPort="8443" URIEncoding="UTF-8"/>
+    <Connector URIEncoding="UTF-8" connectionTimeout="20000" port="8181" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -105,7 +105,7 @@
     -->
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8"/>
+    <Connector URIEncoding="UTF-8" port="8009" protocol="AJP/1.3" redirectPort="8443"/>
 
 
     <!-- An Engine represents the entry point (within Catalina) that processes
@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="jsp01" path="/jsp01" reloadable="true" source="org.eclipse.jst.jee.server:jsp01"/><Context docBase="servlet01" path="/servlet01" reloadable="true" source="org.eclipse.jst.jee.server:servlet01"/></Host>
+      <Context docBase="jsp01" path="/jsp01" reloadable="true" source="org.eclipse.jst.jee.server:jsp01"/><Context docBase="servlet01" path="/servlet01" reloadable="true" source="org.eclipse.jst.jee.server:servlet01"/><Context docBase="jsp_cookie_session" path="/jsp_cookie_session" reloadable="true" source="org.eclipse.jst.jee.server:jsp_cookie_session"/><Context docBase="jsp_Bean" path="/jsp_Bean" reloadable="true" source="org.eclipse.jst.jee.server:jsp_Bean"/><Context docBase="jsp_jdbc" path="/jsp_jdbc" reloadable="true" source="org.eclipse.jst.jee.server:jsp_jdbc"/><Context docBase="jsp_memberManager" path="/jsp_memberManager" reloadable="true" source="org.eclipse.jst.jee.server:jsp_memberManager"/><Context docBase="jsp_members" path="/jsp_members" reloadable="true" source="org.eclipse.jst.jee.server:jsp_members"/></Host>
     </Engine>
   </Service>
 </Server>

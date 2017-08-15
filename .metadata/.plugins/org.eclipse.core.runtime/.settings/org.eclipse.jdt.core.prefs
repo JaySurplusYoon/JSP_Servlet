@@ -1,4 +1,13 @@
 eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.ASPECTJRT_LIB=C\:/Users/jayta/.p2/pool/plugins/org.aspectj.runtime_1.8.10.201704242114.jar
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=C\:/Users/jayta/eclipse/jee-oxygen/eclipse/
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=C\:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=C\:/Program Files/Java/jdk1.8.0_131/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.classpathVariable.JRE_ext=C\:/Program Files/Java/jre1.8.0_131/lib/ext
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=C\:/Users/jayta/.p2/pool/plugins/org.junit_4.12.0.v201504281640
+org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/jayta/.m2/repository
+org.eclipse.jdt.core.classpathVariable.ojdbc=C\:/Program Files/Java/jre1.8.0_131/lib/ext/ojdbc6_g.jar
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8

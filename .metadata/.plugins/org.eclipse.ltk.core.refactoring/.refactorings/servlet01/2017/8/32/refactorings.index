@@ -19,3 +19,6 @@
 1502363098732	Rename type 'Ex_ContextListener2'
 1502368253009	Delete element
 1502368385619	Copy file
+1502419212361	Move 'Human_info.html' to 'WEB-INF'
+1502419219156	Move 'Human_info.html' to 'WebContent'
+1502419223279	Copy file

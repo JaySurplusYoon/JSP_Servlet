@@ -9,6 +9,8 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!--  ServletContext 공유데이터 -->
   <context-param>
     <param-name>id</param-name>
     <param-value>contextID</param-value>
@@ -21,6 +23,8 @@
     <param-name>path</param-name>
     <param-value>안알랴줌♡</param-value>
   </context-param>
+  
+  <!--  ServletConfig 지정된 서블릿페이지에서만 활용가능한 데이터-->
   <servlet>
     <servlet-name>ServletInitParam_2</servlet-name>
     <servlet-class>com.javalec.ex1.Ex_ServletInitParam_2</servlet-class>
@@ -37,10 +41,12 @@
       <param-value>C:\\javalec\\workspace</param-value>
     </init-param>
   </servlet>
+  <!--  맵핑-->
   <servlet-mapping>
     <servlet-name>ServletInitParam_2</servlet-name>
     <url-pattern>/InitParam</url-pattern>
   </servlet-mapping>
+  <!--  리스너 설정-->
   <listener>
     <listener-class>com.javalec.ex1.Ex_ContextListener_1</listener-class>
   </listener>

@@ -2,21 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Connector" key="selection"/>
+		<item value="class" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="class"/>
+			<item value="Logger"/>
+			<item value="apache"/>
+			<item value="Host name"/>
+			<item value="next()"/>
+			<item value="next"/>
+			<item value="resources"/>
+			<item value="build"/>
+			<item value="appBase"/>
+			<item value="output folder"/>
 			<item value="connector"/>
 			<item value="connection"/>
 			<item value="connectionTimeout"/>
 			<item value="Timeout"/>
 			<item value="euc"/>
-			<item value="URIEncoding"/>
-			<item value="URIE"/>
-			<item value="connettor"/>
-			<item value="context"/>
 		</list>
 		<list key="replacehistory">
 		</list>
